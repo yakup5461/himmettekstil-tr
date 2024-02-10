@@ -2,6 +2,7 @@
 <section>
     <div class="container">
        <SectionHeader title="Püsküller" text="Püsküller sayfası"/>
+        <BookList :books="books"/>
     </div>
 </section>
 
@@ -9,14 +10,25 @@
 
 <script >
 import SectionHeader from '@/components/SectionHeader.vue';
+import BookList from '@/components/BookList.vue';
+import books from '@/db.js';
 export default{
     name : "BooksView",
     components:{
-        SectionHeader 
+        SectionHeader ,
+        BookList
+    },
+    data(){
+        return{
+            books:books
+        }
     }
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.auth-box{
+    margin-top: -20px;
 
+}
 </style>
