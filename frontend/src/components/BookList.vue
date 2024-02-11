@@ -8,7 +8,7 @@
 
 <script>
 import BookItem from '@/components/BookItem.vue';
-import books from '@/db';
+import books from '@/db.js';
     export default {
         name:"BookList",
         components:{    
