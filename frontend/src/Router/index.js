@@ -5,6 +5,7 @@ import BooksView from "@/views/BooksView.vue";
 import ContactView from "@/views/ContactView.vue";
 import LoginView from "@/views/LoginView.vue";
 import RegisteView from "@/views/RegisterView.vue";
+import BookDetailView from "@/views/BookDetailView.vue";
 
 const router = createRouter({
     history:createWebHistory(),
@@ -33,6 +34,10 @@ const router = createRouter({
             path:"/register",
             name:"register",
             component: RegisteView
+        },        {
+            path:"/book/:id",
+            name:"book-detail",
+            component: BookDetailView
         },
     ],
     linkActiveClass :'active-link',
