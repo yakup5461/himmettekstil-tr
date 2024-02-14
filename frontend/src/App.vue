@@ -20,4 +20,7 @@ export default {
 html , body {
     font-family: 'Mulish',sans-serif;
 }
+a{
+    text-decoration: none;
+}
 </style>

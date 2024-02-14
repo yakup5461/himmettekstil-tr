@@ -25,7 +25,7 @@ export default{
         return{
             books: books,
             currentPage: 1 ,
-            itemsPerPage: 4
+            itemsPerPage: 8
         }
     },
     computed: {

@@ -1,21 +1,18 @@
 <template>
     <section>
         <div class="container">
-            <SectionHeader title="Book Detail" text=" Lorem impus asdasv  asdafa afafaf asfafa "> </SectionHeader>  
+            <SectionHeader :title="book.name " :text="book.author "> </SectionHeader>  
             <button> Back </button>
             <div class="row mb-4">
                 <div class="col-lg-6 ">
                     <img class="card-img-top" src="../../template/images/b_detail.jpg" alt="detail">
                 </div>
                 <div class="col-lg-6 details-wrapper">
-                    <p class="lead description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas architecto necessitatibus eligendi harum commodi excepturi explicabo sequi praesentium, quas est laudantium natus ab, enim sed ducimus ipsa, laborum dignissimos libero perspiciatis quam ut? Itaque earum in enim eum! Similique, adipisci nulla? Molestias!
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim possimus fuga nisi error in odit maxime perspiciatis accusantium dolorem. Facilis id possimus mollitia. Voluptates quod error quas dolorem, rem velit molestias reprehenderit repudiandae, nesciunt iure perferendis ipsum quisquam dolorum?
-                    </p>
+                    <p class="lead description">{{ book.description }} </p>
                     <div class="mb-4">
                         <div class="row border-bottom pb-2">
-                            <div class="col-lg-6"><strong>page</strong></div>
-                            <div class="col-lg-6">278</div>
+                            <div class="col-lg-6"><strong>Page</strong></div>
+                            <div class="col-lg-6">{{book.page}}</div>
                         </div>
                         <div class="row border-bottom pb-2">
                             <div class="col-lg-6"><strong>Catogory</strong></div>
@@ -23,11 +20,11 @@
                         </div>
                         <div class="row border-bottom pb-2">
                             <div class="col-lg-6"><strong>Rating</strong></div>
-                            <div class="col-lg-6">7.5</div>
+                            <div class="col-lg-6">{{ book.Rating }}</div>
                         </div>
                         <div class="row border-bottom pb-2">
                             <div class="col-lg-6"><strong>Upload Date</strong></div>
-                            <div class="col-lg-6">15/10/2020</div>
+                            <div class="col-lg-6">{{ book.uploadDate }}</div>
                         </div>
                     </div>
                     <div class="comment-section">
@@ -165,10 +162,20 @@
 
 <script>
 import SectionHeader from '@/components/SectionHeader.vue';
+import books from '@/db';
     export default {
     name: "BookDetailView",
     components: {
          SectionHeader 
+        },
+        data(){
+            return{
+                book : null
+            }
+        },
+        created(){
+            const bookId = this.$route.params.id;
+            this.book = books.find(book=> book.id ===parseInt(bookId) )
         }
 }
 </script>

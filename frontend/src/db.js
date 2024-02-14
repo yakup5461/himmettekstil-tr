@@ -25,7 +25,7 @@ const books = [
       author: 'Emily Davis',
       page: 280,
       description:
-        'A heartwarming romance novel about unexpected love in a small town.',
+        'A heartwarming romance novel about love in town.',
       rating: 3.2,
       uploadDate: '19 Jan 2021',
     },

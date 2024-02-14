@@ -8,7 +8,7 @@
             </span>
         </div>
         <h5 class="card-title mt-3 fw-semi-bold">   {{ book.name }}</h5>
-        <p>  {{ book.description }}</p>
+        <p class="card-text">  {{truncatedText }}</p>
         <div class="d-flex justify-content-between align-items-center">
             <a href="#" class="card-link">Read More</a>
             <b style="background-color: #063547 ;"  class="py-1 px-2 text-white badge mb-0">{{ book.page }} sayfa</b>
@@ -38,12 +38,22 @@
                 }else {
                     return 'bg-danger';
                 }
+            },
+            truncatedText(){
+                if(this.book.description.length > 50){
+                    return this.book.description.slice(0,50) + '...';
+                }else{
+                    return this.book.description ;
+                }
+
             }
         }
 
     }
 </script>
 
-<style lang="scss" scoped>
-
+<style  scoped>
+.card-text{
+    min-height: 70px;
+}
 </style>
