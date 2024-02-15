@@ -2,7 +2,7 @@
     <section>
         <div class="container">
             <SectionHeader :title="book.name " :text="book.author "> </SectionHeader>  
-            <button> Back </button>
+            <font-awesome-icon icon="arrow-left" size="2xl" class="mb-2" style="cursor: pointer;" @click="goToBackBooks"/>
             <div class="row mb-4">
                 <div class="col-lg-6 ">
                     <img class="card-img-top" src="../../template/images/b_detail.jpg" alt="detail">
@@ -35,8 +35,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">Jhon DOE</p>
                                     <div class="d-flex aling-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"><strong>8</strong></p>
+                                        <font-awesome-icon :icon="['far', 'thumbs-up']" />
+                                        <p class="ps-2 mb-0"><strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -176,6 +176,11 @@ import books from '@/db';
         created(){
             const bookId = this.$route.params.id;
             this.book = books.find(book=> book.id ===parseInt(bookId) )
+        },
+        methods:{
+            goToBackBooks(){ 
+                this.$router.push({name:"books"})
+            }
         }
 }
 </script>

@@ -4,7 +4,7 @@
     <li class="page-item" :class="{'disabled':currentPage === 1}" >
       <a class="page-link" @click="goToPage(currentPage-1)" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
+        <span class="sr-only" style="cursor: pointer;">Previous</span>
       </a>
     </li>
     <li class="page-item" :class="{'active': currentPage === page}" v-for=" page in totalPages" :key="page" ><a class="page-link" 
@@ -13,7 +13,7 @@
     <li class="page-item" :class="{ 'disabled':currentPage === totalPages }">
       <a class="page-link" @click="goToPage(currentPage+1)" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
+        <span class="sr-only" style="cursor: pointer;">Next</span>
       </a>
     </li>
   </ul>
