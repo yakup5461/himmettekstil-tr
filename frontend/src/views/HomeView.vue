@@ -1,7 +1,9 @@
 <template>
+    <section class="full-section-height" >
     <div>
         HomeView Page
     </div>
+    </section>
 </template>
 
 <script >
@@ -10,6 +12,6 @@ export default{
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

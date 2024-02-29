@@ -1,6 +1,6 @@
 <template>
     <div>
-       <section style="min-height: calc(100vh - 130px);" >
+       <section class="full-section-height" >
         <div class="container">
             <form  @submit.prevent="SubmitForm">
           <div class="row justify-content-center">
@@ -54,7 +54,7 @@ export default{
     },
     methods:{
       SubmitForm(){
-        console.log("formData::" , this.FormData)
+        console.log("Register formData::" , this.FormData)
 
       }
     }
@@ -62,6 +62,6 @@ export default{
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

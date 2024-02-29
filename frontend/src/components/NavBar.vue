@@ -44,7 +44,7 @@ import { RouterLink } from 'vue-router';
 
 <style scoped>
 .custom-nav{
-    background-color: #063547;
+    background-color:var(--primary-color);
     padding: 15px 0px;
 }
 .navbar-brand {
@@ -60,10 +60,10 @@ import { RouterLink } from 'vue-router';
     text-align: center;
 }
 .nav-link:hover{
-    color: #44b89d;
+    color: var(--secondary-color);
    
 }
 .active-link{
-    color: #44b89d;
+    color:var(--secondary-color);
 }
 </style>
