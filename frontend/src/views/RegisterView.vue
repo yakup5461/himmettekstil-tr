@@ -1,13 +1,14 @@
 <template>
     <div>
-       <section>
+       <section style="min-height: calc(100vh - 130px);" >
         <div class="container">
-            <form class="mt-5">
+            <form  @submit.prevent="SubmitForm">
           <div class="row justify-content-center">
+            
             <!-- Username Field (Medium and Larger Screens) -->
             <div class="col-md-6 col-8 mb-3">
               <label for="username" class="form-label">Username</label>
-              <input type="text" class="form-control" id="username" name="username" v-model="FormData.username" required>
+              <input type="text" class="form-control" id="username" name="username" v-model.trim="FormData.username" required>
             </div>
           </div>
 
@@ -15,7 +16,7 @@
             <!-- Email Field (Medium and Larger Screens) -->
             <div class="col-md-6 col-8 mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" v-model="FormData.email" required>
+              <input type="email" class="form-control" id="email" name="email" v-model.trim="FormData.email" required>
             </div>
           </div>
 
@@ -23,68 +24,9 @@
           <div class="row justify-content-center">
             <div class="col-md-6 col-8 mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" name="password" v-model="FormData.password" required>
+              <input type="password" class="form-control" id="password" name="password" v-model.trim="FormData.password" required>
             </div>
           </div>
-
-          <!-- Gender Field -->
-          <div class="row justify-content-center">
-            <div class="col-md-6 col-8 mb-3">
-              <h5>Gender</h5>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" value='male' id="male" v-model="FormData.gender">
-                <label class="form-check-label" for="male">
-                  Male
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" value='female' id="female" v-model="FormData.gender">
-                <label class="form-check-label" for="female">
-                  Female
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Age Field -->
-          <div class="row justify-content-center">
-            <div class="col-md-6 col-8 mb-3">
-              <label for="age" class="form-label">Age:</label>
-              <input type="number" class="form-control" id="age" required>
-            </div>
-          </div>
-
-          <!-- Programming Field -->
-          <div class="row justify-content-center">
-            <div class="col-md-6 col-8 mb-3">
-              <h5>Which Programming Language(s) you know?</h5>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="java" id="java">
-                <label class="form-check-label" for="java">
-                  Java
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="c++" id="c++">
-                <label class="form-check-label" for="c++">
-                  C++
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="python" id="python">
-                <label class="form-check-label" for="python">
-                  Python
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="rust" id="rust">
-                <label class="form-check-label" for="rust">
-                  Rust
-                </label>
-              </div>
-            </div>
-          </div>
-
 
           <!-- Submit Button -->
           <div class="row justify-content-center">
@@ -106,10 +48,15 @@ export default{
             FormData:{
                 username: '',
                 email:    '',
-                password: '',
-                gender:   ''
+                password: ''
             }
         }
+    },
+    methods:{
+      SubmitForm(){
+        console.log("formData::" , this.FormData)
+
+      }
     }
 
 }
