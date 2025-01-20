@@ -1,7 +1,7 @@
 <template>
 <div class="row">
-    <div class="col-sm-6 col-md-4 col-xl-3 mb-5 " v-for=" book in books " :key="book.id" >
-    <RouterLink :to="'/book/'+book.id">
+    <div class="col-sm-6 col-md-4 col-xl-3 mb-5 " v-for=" book in books " :key="book._id" >
+    <RouterLink :to="'/book/'+book._id">
         <BookItem :book="book"/>
     </RouterLink>
       </div>
@@ -10,7 +10,7 @@
 
 <script>
 import BookItem from '@/components/BookItem.vue';
-import books from '@/db.js';
+//import books from '@/db.js';
 import { RouterLink } from 'vue-router';
     export default {
         name:"BookList",

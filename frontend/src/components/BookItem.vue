@@ -7,7 +7,7 @@
             {{ book.author }}
             </span>
         </div>
-        <h5 class="card-title mt-3 fw-semi-bold">   {{ book.name }}</h5>
+        <h5 class="card-title mt-3 fw-semi-bold">   {{ book.title }}</h5>
         <p class="card-text">  {{truncatedText }}</p>
         <div class="d-flex justify-content-between align-items-center">
             <a href="#" class="card-link">Read More</a>

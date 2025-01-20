@@ -6,7 +6,8 @@ const router = express.Router();
 /* router.get('/',bookController.getAllBooks);
 router.post('/',bookController.createABook); */
 
- router.route('/')
+ router
+      .route('/')
       .get(bookController.getAllBooks)
       .post(bookController.createABook); 
 
@@ -15,7 +16,8 @@ router.post('/',bookController.createABook); */
 router.put('/:id',bookController.updateABook);
 router.delete('/:id',bookController.deleteABook); */
 
-router.route('/:id')
+router
+      .route('/:id')
       .put(bookController.updateABook)
       .delete(bookController.deleteABook)
       .get(bookController.getABook); 

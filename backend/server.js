@@ -6,14 +6,14 @@ import cors from 'cors';
 const app = express();
 const port = 3000 ;
 
-/* const corsOptions = {
+ const corsOptions = {
   origin : ['http://localhost:5173'],
   credential : true,
 };
 
-app.use(cors(corsOptions)); */
+app.use(cors(corsOptions)); 
 app.use(express.json());
-app.use("/api/v1/books",bookRoute);
+app.use('/api/v1/books',bookRoute);
 
 try {
   await connectDB() ;
